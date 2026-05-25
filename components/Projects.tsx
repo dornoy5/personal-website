@@ -16,6 +16,14 @@ type Project = {
 // Add new projects here — auto-rotates through them.
 const projects: Project[] = [
   {
+    name: "Personal Website",
+    description:
+      "This site. Next.js 14 portfolio with an animated starfield background, intro video with custom-rendered subtitles, project showcase carousel, and AI-tools skill section. Built iteratively with Claude Code.",
+    liveUrl: "https://personal-website-ten-ochre-37.vercel.app",
+    githubUrl: "https://github.com/dornoy5/personal-website",
+    tech: ["Next.js", "TypeScript", "Tailwind", "Framer Motion"],
+  },
+  {
     name: "Poker Night Manager",
     description:
       "Mobile-first React app to manage poker home games — buy-ins, rebuys, chips & auto-settlement.",
