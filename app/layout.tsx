@@ -5,7 +5,7 @@ import "./globals.css";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://personal-website-ten-ochre-37.vercel.app"),
+  metadataBase: new URL("https://dor-noy.com"),
   title: "Dor Noy | Full Stack Developer + SDR",
   description:
     "Full Stack Developer with a strong background in sales. I build things that work and talk to people that matter.",
@@ -13,7 +13,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Dor Noy — Full Stack Developer + SDR",
     description: "I build things that work and talk to people that matter.",
-    url: "https://personal-website-ten-ochre-37.vercel.app",
+    url: "https://dor-noy.com",
     siteName: "Dor Noy",
     type: "website",
   },

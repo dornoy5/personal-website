@@ -19,7 +19,7 @@ const projects: Project[] = [
     name: "Personal Website",
     description:
       "This site. Next.js 14 portfolio — animated starfield, intro video with custom subtitles, project carousel. Built iteratively with Claude Code.",
-    liveUrl: "https://personal-website-ten-ochre-37.vercel.app",
+    liveUrl: "https://dor-noy.com",
     githubUrl: "https://github.com/dornoy5/personal-website",
     tech: ["Next.js", "TypeScript", "Tailwind", "Framer Motion"],
   },

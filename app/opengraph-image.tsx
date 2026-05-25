@@ -100,7 +100,7 @@ export default async function Image() {
             letterSpacing: 4,
           }}
         >
-          personal-website-ten-ochre-37.vercel.app
+          dor-noy.com
         </div>
       </div>
     ),
