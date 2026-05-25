@@ -18,7 +18,7 @@ const projects: Project[] = [
   {
     name: "Personal Website",
     description:
-      "This site. Next.js 14 portfolio with an animated starfield background, intro video with custom-rendered subtitles, project showcase carousel, and AI-tools skill section. Built iteratively with Claude Code.",
+      "This site. Next.js 14 portfolio — animated starfield, intro video with custom subtitles, project carousel. Built iteratively with Claude Code.",
     liveUrl: "https://personal-website-ten-ochre-37.vercel.app",
     githubUrl: "https://github.com/dornoy5/personal-website",
     tech: ["Next.js", "TypeScript", "Tailwind", "Framer Motion"],
@@ -73,7 +73,7 @@ export default function Projects() {
           initial={{ opacity: 0, scale: 0.95 }}
           animate={isInView ? { opacity: 1, scale: 1 } : {}}
           transition={{ duration: 0.8, delay: 0.2 }}
-          className="relative aspect-[16/10] rounded-3xl overflow-hidden glass border border-white/10"
+          className="relative aspect-[4/3] sm:aspect-[16/10] rounded-2xl sm:rounded-3xl overflow-hidden glass border border-white/10"
         >
           <AnimatePresence mode="wait">
             <motion.div
@@ -100,7 +100,7 @@ export default function Projects() {
 
               <div className="absolute inset-0 bg-gradient-to-t from-[#030014]/95 via-[#030014]/40 to-transparent" />
 
-              <div className="absolute bottom-0 left-0 right-0 p-6 md:p-10">
+              <div className="absolute bottom-0 left-0 right-0 p-4 sm:p-6 md:p-10">
                 <div className="flex flex-wrap gap-2 mb-3">
                   {project.tech.map((t) => (
                     <span
