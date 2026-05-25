@@ -8,11 +8,11 @@ import {
   SiNodedotjs, SiPython, SiDjango, SiExpress, SiPostgresql, SiMongodb,
   SiFirebase, SiSupabase,
   SiDocker, SiGit, SiGithub, SiVisualstudiocode, SiVercel, SiNpm, SiPnpm,
-  SiPostman, SiFigma, SiLinux,
+  SiPostman, SiFigma,
   SiOpenai,
 } from "react-icons/si";
 import type { IconType } from "react-icons";
-import { Sparkles, Bot, MousePointer2, Triangle, Search, Mic, Globe } from "lucide-react";
+import { Sparkles, Bot, MousePointer2, Triangle, Search, Globe, Terminal } from "lucide-react";
 import type { LucideIcon } from "lucide-react";
 
 type AnyIcon = IconType | LucideIcon;
@@ -65,20 +65,18 @@ const categories: Category[] = [
       { name: "pnpm",    icon: SiPnpm,             color: "#F69220" },
       { name: "Postman", icon: SiPostman,          color: "#FF6C37" },
       { name: "Figma",   icon: SiFigma,            color: "#F24E1E" },
-      { name: "Linux",   icon: SiLinux,            color: "#FCC624" },
     ],
   },
   {
-    label: "AI Tools",
+    label: "AI Coding Tools",
     gradient: "from-amber-500/10 to-orange-600/5", accent: "border-amber-500/20",
     skills: [
       { name: "Claude / Claude Code", icon: Sparkles,      color: "#D97757" },
-      { name: "ChatGPT",              icon: SiOpenai,      color: "#10A37F" },
       { name: "GitHub Copilot",       icon: Bot,           color: "#E5E7EB" },
       { name: "Cursor",               icon: MousePointer2, color: "#67E8F9" },
+      { name: "Codex",                icon: Terminal,      color: "#10A37F" },
       { name: "v0.dev",               icon: Triangle,      color: "#FFFFFF" },
       { name: "Perplexity",           icon: Search,        color: "#20B8CD" },
-      { name: "Whisper",              icon: Mic,           color: "#A78BFA" },
     ],
   },
 ];

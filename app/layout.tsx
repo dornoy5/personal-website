@@ -6,12 +6,12 @@ const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://dor-noy.com"),
-  title: "Dor Noy | Full Stack Developer + SDR",
+  title: "Dor Noy | Full Stack Developer",
   description:
-    "Full Stack Developer with a strong background in sales. I build things that work and talk to people that matter.",
-  keywords: ["Full Stack Developer", "React", "Next.js", "TypeScript", "Node.js", "Python", "SDR", "Dor Noy"],
+    "Full Stack Developer who understands users. I build things that work and talk to people that matter.",
+  keywords: ["Full Stack Developer", "React", "Next.js", "TypeScript", "Node.js", "Python", "Dor Noy"],
   openGraph: {
-    title: "Dor Noy — Full Stack Developer + SDR",
+    title: "Dor Noy — Full Stack Developer",
     description: "I build things that work and talk to people that matter.",
     url: "https://dor-noy.com",
     siteName: "Dor Noy",
@@ -19,7 +19,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Dor Noy — Full Stack Developer + SDR",
+    title: "Dor Noy — Full Stack Developer",
     description: "I build things that work and talk to people that matter.",
   },
 };

@@ -77,7 +77,7 @@ export default function VideoSection() {
 
         <motion.div initial={{ opacity: 0, scale: 0.95 }} animate={isInView ? { opacity: 1, scale: 1 } : {}}
           transition={{ duration: 0.8, delay: 0.2 }}
-          className="relative aspect-[3/4] sm:aspect-[4/3] rounded-2xl sm:rounded-3xl overflow-hidden glass border border-white/10 bg-gradient-to-b from-violet-900/10 via-[#030014]/30 to-cyan-900/10">
+          className="frame-gradient relative aspect-[3/4] sm:aspect-[4/3] rounded-2xl sm:rounded-3xl overflow-hidden glass border border-white/10 bg-gradient-to-b from-violet-900/10 via-[#030014]/30 to-cyan-900/10">
 
           <div className="absolute inset-x-0 top-0 bottom-[80px] sm:bottom-[110px] flex items-center justify-center px-3 sm:px-10 pt-3 sm:pt-8">
             <div className="relative h-full inline-block">
