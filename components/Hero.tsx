@@ -42,17 +42,6 @@ export default function Hero() {
     <section id="home" className="relative min-h-screen flex items-center justify-center overflow-hidden">
       <div className="relative z-10 text-center px-6 max-w-5xl mx-auto">
 
-        {/* Welcome badge */}
-        <motion.div
-          initial={{ opacity: 0, y: -10 }} animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.1 }}
-          className="flex justify-center mb-5"
-        >
-          <span className="px-5 py-2 rounded-full border border-cyan-400/60 bg-cyan-400/[0.12] text-cyan-300 text-sm font-semibold tracking-[0.15em] uppercase shadow-[0_0_18px_rgba(96,165,250,0.2)]">
-            👋 Welcome — I&apos;m happy you&apos;re here
-          </span>
-        </motion.div>
-
         {/* Avatar */}
         <motion.div
           initial={{ opacity: 0, scale: 0.8 }}
