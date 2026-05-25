@@ -1,0 +1,14 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(npm run *)",
+      "Bash(ffprobe -v error -select_streams v:0 -show_entries stream=width,height,display_aspect_ratio,rotation,side_data_list -of default=noprint_wrappers=1 \"C:\\\\Users\\\\lor\\\\Full Stack\\\\personal projects\\\\Dor professional profile\\\\public\\\\dor-noy-intro.mp4\")",
+      "PowerShell($shell = New-Object -ComObject Shell.Application; $folder = $shell.Namespace\\(\"C:\\\\Users\\\\lor\\\\Full Stack\\\\personal projects\\\\Dor professional profile\\\\public\"\\); $file = $folder.ParseName\\(\"dor-noy-intro.mp4\"\\); 0..330 | ForEach-Object { $name = $folder.GetDetailsOf\\($null, $_\\); $value = $folder.GetDetailsOf\\($file, $_\\); if \\($value -and \\($name -match \"dimension|width|height|frame|rotat|ratio\"\\)\\) { \"$_  $name = $value\" } })",
+      "WebFetch(domain:api.github.com)",
+      "Bash(git init *)",
+      "Bash(git config *)",
+      "Bash(git add *)",
+      "Bash(git -c 'user.name=Dor Noy' commit -m ' *)"
+    ]
+  }
+}
