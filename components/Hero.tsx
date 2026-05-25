@@ -2,7 +2,7 @@
 
 import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
-import { ChevronDown } from "lucide-react";
+import { ChevronDown, Play } from "lucide-react";
 import { FiGithub, FiLinkedin, FiMail } from "react-icons/fi";
 
 const roles = [
@@ -140,10 +140,41 @@ export default function Hero() {
         </motion.div>
       </div>
 
+      {/* Mobile: prominent CTA pointing to the intro video (sidebar hint is desktop-only) */}
+      <motion.button
+        initial={{ opacity: 0, y: 10 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ delay: 1.8, duration: 0.6 }}
+        onClick={() => {
+          document.getElementById("video")?.scrollIntoView({ behavior: "smooth" });
+          window.dispatchEvent(new Event("play-intro-video"));
+        }}
+        className="md:hidden absolute bottom-6 left-1/2 -translate-x-1/2 z-10 flex flex-col items-center gap-2 cursor-pointer"
+        aria-label="Watch intro video"
+      >
+        <motion.span
+          animate={{
+            boxShadow: [
+              "0 0 0 0 rgba(34,211,238,0.45)",
+              "0 0 0 14px rgba(34,211,238,0)",
+              "0 0 0 0 rgba(34,211,238,0)",
+            ],
+          }}
+          transition={{ duration: 2.2, repeat: Infinity, ease: "easeOut" }}
+          className="px-5 py-2.5 rounded-full bg-cyan-400/[0.1] border border-cyan-400/60 text-cyan-300 text-xs font-bold tracking-[0.25em] uppercase flex items-center gap-2"
+        >
+          <Play size={12} fill="currentColor" /> Watch My Intro
+        </motion.span>
+        <motion.div animate={{ y: [0, 5, 0] }} transition={{ duration: 1.6, repeat: Infinity }} className="text-cyan-400/80">
+          <ChevronDown size={20} />
+        </motion.div>
+      </motion.button>
+
+      {/* Desktop: subtle chevron (sidebar provides the prominent hint) */}
       <motion.button
         initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 2.2 }}
         onClick={() => document.getElementById("video")?.scrollIntoView({ behavior: "smooth" })}
-        className="absolute bottom-8 left-1/2 -translate-x-1/2 z-10 text-gray-600 hover:text-cyan-400 transition-colors cursor-pointer"
+        className="hidden md:block absolute bottom-8 left-1/2 -translate-x-1/2 z-10 text-gray-600 hover:text-cyan-400 transition-colors cursor-pointer"
       >
         <motion.div animate={{ y: [0, 7, 0] }} transition={{ duration: 1.6, repeat: Infinity }}>
           <ChevronDown size={26} />
