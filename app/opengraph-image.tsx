@@ -1,7 +1,7 @@
 import { ImageResponse } from "next/og";
 
 export const runtime = "edge";
-export const alt = "Dor Noy — Full Stack Developer";
+export const alt = "Dor Noy — Full Stack Developer + SDR";
 export const size = { width: 1200, height: 630 };
 export const contentType = "image/png";
 
@@ -87,7 +87,7 @@ export default async function Image() {
             letterSpacing: 1,
           }}
         >
-          Full Stack Developer
+          Full Stack Developer + SDR
         </div>
 
         <div

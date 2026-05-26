@@ -6,7 +6,7 @@ import { Code2, TrendingUp, Zap } from "lucide-react";
 
 const traits = [
   { icon: <Code2 size={21} />,      title: "Full Stack Builder",      desc: "From idea to deployed product — frontend to backend, I own the full lifecycle." },
-  { icon: <TrendingUp size={21} />, title: "Customer-Focused Engineer",  desc: "I understand users, real needs, and how to translate technical work into clear value." },
+  { icon: <TrendingUp size={21} />, title: "Sales-Minded Developer",  desc: "I understand users, pipelines, and what it takes to close — not just ship." },
   { icon: <Zap size={21} />,        title: "Ownership & Speed",       desc: "I take ownership, move with urgency, and focus relentlessly on what works." },
 ];
 
@@ -34,8 +34,8 @@ export default function About() {
               <span className="gradient-text">I understand the people using them.</span>&rdquo;
             </blockquote>
             <p className="text-gray-400 text-lg leading-relaxed mb-5">
-              I&apos;m Dor — a full-stack developer with a background in customer-facing roles.
-              I build products and understand the people using them, translating technical work into clear value.
+              I&apos;m Dor — a full-stack developer with a strong background in sales development.
+              I don&apos;t just build products, I understand the people using them and how to communicate real value.
             </p>
             <p className="text-gray-500 text-base leading-relaxed">
               If you&apos;re looking for someone who can both{" "}

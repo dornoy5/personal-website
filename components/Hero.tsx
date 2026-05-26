@@ -9,6 +9,7 @@ const roles = [
   "Full Stack Developer",
   "Frontend Engineer",
   "Backend Engineer",
+  "Sales Development Rep",
   "Problem Solver",
 ];
 
@@ -46,7 +47,7 @@ export default function Hero() {
           initial={{ opacity: 0, scale: 0.8 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 0.6, delay: 0.2 }}
-          className="flex justify-center mb-6"
+          className="flex justify-center mb-5"
         >
           <div className="relative">
             <div className="w-24 h-24 rounded-full flex items-center justify-center text-2xl font-black text-white shadow-lg"
@@ -63,7 +64,7 @@ export default function Hero() {
           transition={{ duration: 0.6, delay: 0.3 }}
           className="text-cyan-300 font-bold text-sm tracking-[0.25em] uppercase mb-3"
         >
-          Hi, my name is
+          Hey there, I&apos;m
         </motion.p>
 
         <motion.h1
@@ -78,7 +79,7 @@ export default function Hero() {
         <motion.div
           initial={{ opacity: 0 }} animate={{ opacity: 1 }}
           transition={{ duration: 0.6, delay: 0.9 }}
-          className="h-10 flex items-center justify-center mb-6"
+          className="h-10 flex items-center justify-center mb-5"
         >
           <span className="text-xl md:text-2xl text-gray-400 font-light tracking-wide">
             {displayed}
@@ -89,15 +90,16 @@ export default function Hero() {
         <motion.p
           initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 1.1 }}
-          className="text-gray-200 text-base md:text-xl max-w-xl mx-auto mb-10 leading-relaxed font-medium"
+          className="text-gray-300 text-base md:text-xl max-w-xl mx-auto mb-8 leading-relaxed"
         >
-          I build things that work and talk to people that matter.
+          Glad you stopped by.{" "}
+          <span className="text-white font-semibold">I build things that work and talk to people that matter.</span>
         </motion.p>
 
         <motion.div
           initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 1.3 }}
-          className="flex flex-wrap items-center justify-center gap-3 sm:gap-4"
+          className="flex flex-wrap items-center justify-center gap-4 mb-8"
         >
           <a href="https://www.linkedin.com/in/dor-noy-2314362b4" target="_blank" rel="noopener noreferrer" className="btn-primary">
             <FiLinkedin size={17} /> Let&apos;s Connect
@@ -105,13 +107,29 @@ export default function Hero() {
           <a href="https://github.com/dornoy5" target="_blank" rel="noopener noreferrer" className="btn-secondary">
             <FiGithub size={17} /> View GitHub
           </a>
-          <a href="mailto:dornoy5@gmail.com" className="btn-secondary">
-            <FiMail size={17} /> Email Me
-          </a>
+        </motion.div>
+
+        <motion.div
+          initial={{ opacity: 0 }} animate={{ opacity: 1 }}
+          transition={{ delay: 1.7 }}
+          className="flex items-center justify-center gap-7"
+        >
+          {[
+            { icon: <FiGithub size={19} />,   href: "https://github.com/dornoy5" },
+            { icon: <FiLinkedin size={19} />, href: "https://www.linkedin.com/in/dor-noy-2314362b4" },
+            { icon: <FiMail size={19} />,     href: "mailto:dornoy5@gmail.com" },
+          ].map(({ icon, href }, i) => (
+            <a key={i} href={href}
+              target={href.startsWith("mailto") ? undefined : "_blank"}
+              rel={href.startsWith("mailto") ? undefined : "noopener noreferrer"}
+              className="text-gray-600 hover:text-cyan-400 transition-colors duration-200">
+              {icon}
+            </a>
+          ))}
         </motion.div>
       </div>
 
-      {/* Mobile: refined intro CTA */}
+      {/* Mobile: prominent CTA pointing to the intro video (sidebar hint is desktop-only) */}
       <motion.button
         initial={{ opacity: 0, y: 10 }}
         animate={{ opacity: 1, y: 0 }}
@@ -120,18 +138,28 @@ export default function Hero() {
           document.getElementById("video")?.scrollIntoView({ behavior: "smooth" });
           window.dispatchEvent(new Event("play-intro-video"));
         }}
-        className="md:hidden absolute bottom-6 left-1/2 -translate-x-1/2 z-10 flex flex-col items-center gap-1.5 cursor-pointer group"
+        className="md:hidden absolute bottom-6 left-1/2 -translate-x-1/2 z-10 flex flex-col items-center gap-2 cursor-pointer"
         aria-label="Watch intro video"
       >
-        <span className="px-4 py-1.5 rounded-full bg-white/[0.04] border border-white/[0.15] text-gray-200 text-[10px] font-semibold tracking-[0.3em] uppercase flex items-center gap-2 group-active:bg-white/[0.08] transition-colors">
-          <Play size={10} fill="currentColor" /> Watch Intro
-        </span>
-        <motion.div animate={{ y: [0, 4, 0] }} transition={{ duration: 1.6, repeat: Infinity }} className="text-gray-500">
-          <ChevronDown size={18} />
+        <motion.span
+          animate={{
+            boxShadow: [
+              "0 0 0 0 rgba(34,211,238,0.45)",
+              "0 0 0 14px rgba(34,211,238,0)",
+              "0 0 0 0 rgba(34,211,238,0)",
+            ],
+          }}
+          transition={{ duration: 2.2, repeat: Infinity, ease: "easeOut" }}
+          className="px-5 py-2.5 rounded-full bg-cyan-400/[0.1] border border-cyan-400/60 text-cyan-300 text-xs font-bold tracking-[0.25em] uppercase flex items-center gap-2"
+        >
+          <Play size={12} fill="currentColor" /> Watch My Intro
+        </motion.span>
+        <motion.div animate={{ y: [0, 5, 0] }} transition={{ duration: 1.6, repeat: Infinity }} className="text-cyan-400/80">
+          <ChevronDown size={20} />
         </motion.div>
       </motion.button>
 
-      {/* Desktop: subtle chevron (sidebar provides the main prompt) */}
+      {/* Desktop: subtle chevron (sidebar provides the prominent hint) */}
       <motion.button
         initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 2.2 }}
         onClick={() => document.getElementById("video")?.scrollIntoView({ behavior: "smooth" })}

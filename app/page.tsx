@@ -19,7 +19,7 @@ export default function Home() {
         <PersonalizedBanner />
       </Suspense>
       <Sidebar />
-      <main className="relative text-white md:pl-24" style={{ zIndex: 1 }}>
+      <main className="relative text-white md:pl-20" style={{ zIndex: 1 }}>
         <Nav />
         <Hero />
         <VideoSection />

@@ -25,13 +25,13 @@ export default function Connect() {
             style={{ fontSize: "clamp(3rem, 8vw, 5rem)", lineHeight: 1.05 }}>
             Let&apos;s <span className="gradient-text">Work</span><br />Together
           </h2>
-          <p className="text-gray-500 text-base sm:text-lg max-w-xl mx-auto leading-relaxed">
-            Whether you need a developer, a builder who understands users, or someone who can do both — I&apos;m one message away.
+          <p className="text-gray-500 text-lg max-w-xl mx-auto leading-relaxed">
+            Whether you need a developer, a sales-minded builder, or someone who can do both — I&apos;m one message away.
           </p>
         </motion.div>
 
         <motion.div initial={{ opacity: 0, y: 40 }} animate={isInView ? { opacity: 1, y: 0 } : {}}
-          transition={{ duration: 0.7, delay: 0.2 }} className="grid grid-cols-1 md:grid-cols-3 gap-3 sm:gap-4 mt-8">
+          transition={{ duration: 0.7, delay: 0.2 }} className="grid md:grid-cols-3 gap-4 mt-8">
           {contacts.map((c, i) => {
             const Icon = c.icon;
             return (
@@ -40,16 +40,13 @@ export default function Connect() {
                 rel={c.href.startsWith("mailto") ? undefined : "noopener noreferrer"}
                 initial={{ opacity: 0, y: 20 }} animate={isInView ? { opacity: 1, y: 0 } : {}}
                 transition={{ duration: 0.5, delay: 0.3 + i * 0.1 }}
-                className={`glass rounded-xl sm:rounded-2xl p-3.5 sm:p-6 bg-gradient-to-b ${c.gradient} border border-white/[0.08] ${c.border} transition-all duration-300 hover:-translate-y-1.5 group flex flex-row sm:flex-col items-center sm:items-stretch gap-3 sm:gap-0 text-left`}>
-                <div className={`${c.color} flex-shrink-0 w-10 h-10 sm:w-auto sm:h-auto rounded-lg sm:rounded-none bg-white/[0.04] sm:bg-transparent flex items-center justify-center sm:flex sm:justify-between sm:items-center sm:mb-4`}>
-                  <Icon className="size-5 sm:size-[23px]" />
-                  <ArrowUpRight size={15} className="hidden sm:inline text-gray-600 group-hover:text-current transition-colors" />
+                className={`glass rounded-2xl p-6 bg-gradient-to-b ${c.gradient} border border-white/[0.08] ${c.border} transition-all duration-300 hover:-translate-y-1.5 group text-left`}>
+                <div className={`${c.color} mb-4 flex justify-between items-center`}>
+                  <Icon size={23} />
+                  <ArrowUpRight size={15} className="text-gray-600 group-hover:text-current transition-colors" />
                 </div>
-                <div className="flex-1 sm:flex-none min-w-0">
-                  <p className="text-gray-600 text-[10px] sm:text-xs uppercase tracking-widest font-mono mb-0.5 sm:mb-1.5">{c.label}</p>
-                  <p className="text-white font-medium text-xs sm:text-sm truncate">{c.value}</p>
-                </div>
-                <ArrowUpRight size={14} className="sm:hidden flex-shrink-0 text-gray-600 group-hover:text-current transition-colors" />
+                <p className="text-gray-600 text-xs uppercase tracking-widest font-mono mb-1.5">{c.label}</p>
+                <p className="text-white font-medium text-sm">{c.value}</p>
               </motion.a>
             );
           })}
