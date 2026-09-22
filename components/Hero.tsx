@@ -101,7 +101,7 @@ export default function Hero() {
           transition={{ duration: 0.6, delay: 1.3 }}
           className="flex flex-wrap items-center justify-center gap-4 mb-8"
         >
-          <a href="https://www.linkedin.com/in/dor-noy-2314362b4" target="_blank" rel="noopener noreferrer" className="btn-primary">
+          <a href="https://www.linkedin.com/in/dornoy" target="_blank" rel="noopener noreferrer" className="btn-primary">
             <FiLinkedin size={17} /> Let&apos;s Connect
           </a>
           <a href="https://github.com/dornoy5" target="_blank" rel="noopener noreferrer" className="btn-secondary">
@@ -116,7 +116,7 @@ export default function Hero() {
         >
           {[
             { icon: <FiGithub size={19} />,   href: "https://github.com/dornoy5" },
-            { icon: <FiLinkedin size={19} />, href: "https://www.linkedin.com/in/dor-noy-2314362b4" },
+            { icon: <FiLinkedin size={19} />, href: "https://www.linkedin.com/in/dornoy" },
             { icon: <FiMail size={19} />,     href: "mailto:dornoy5@gmail.com" },
           ].map(({ icon, href }, i) => (
             <a key={i} href={href}

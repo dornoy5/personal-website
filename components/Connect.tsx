@@ -6,7 +6,7 @@ import { FiGithub, FiLinkedin, FiMail } from "react-icons/fi";
 import { ArrowUpRight } from "lucide-react";
 
 const contacts = [
-  { icon: FiLinkedin, label: "LinkedIn", value: "/in/dor-noy",        href: "https://www.linkedin.com/in/dor-noy-2314362b4", gradient: "from-blue-500/15 to-blue-700/5",   border: "hover:border-blue-500/40",   color: "text-blue-400"   },
+  { icon: FiLinkedin, label: "LinkedIn", value: "/in/dornoy",         href: "https://www.linkedin.com/in/dornoy", gradient: "from-blue-500/15 to-blue-700/5",   border: "hover:border-blue-500/40",   color: "text-blue-400"   },
   { icon: FiMail,     label: "Email",    value: "dornoy5@gmail.com",   href: "mailto:dornoy5@gmail.com",                      gradient: "from-cyan-500/15 to-cyan-700/5",   border: "hover:border-cyan-500/40",   color: "text-cyan-400"   },
   { icon: FiGithub,   label: "GitHub",   value: "github.com/dornoy5",  href: "https://github.com/dornoy5",                    gradient: "from-violet-500/15 to-violet-700/5", border: "hover:border-violet-500/40", color: "text-violet-400" },
 ];

@@ -180,7 +180,7 @@ export default function Sidebar() {
 
       <div className="flex flex-col items-center gap-3 pt-4 border-t border-white/[0.07] w-12 flex-shrink-0">
         <a
-          href="https://www.linkedin.com/in/dor-noy-2314362b4"
+          href="https://www.linkedin.com/in/dornoy"
           target="_blank"
           rel="noopener noreferrer"
           aria-label="LinkedIn"
