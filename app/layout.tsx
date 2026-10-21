@@ -6,21 +6,21 @@ const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://dor-noy.com"),
-  title: "Dor Noy | Full Stack Developer + SDR",
+  title: "Dor Noy | AI Builder: Web, AI Video, Automations",
   description:
-    "Full Stack Developer with a strong background in sales. I build things that work and talk to people that matter.",
-  keywords: ["Full Stack Developer", "React", "Next.js", "TypeScript", "Node.js", "Python", "SDR", "Dor Noy"],
+    "I build with AI: live websites, AI video ads and property films, and the multi-agent Claude Code setup that runs my projects.",
+  keywords: ["AI Builder", "AI Video", "Claude Code", "AI Agents", "Automation", "Next.js", "React", "TypeScript", "Dor Noy"],
   openGraph: {
-    title: "Dor Noy — Full Stack Developer + SDR",
-    description: "I build things that work and talk to people that matter.",
+    title: "Dor Noy | AI Builder: Web, AI Video, Automations",
+    description: "Websites, AI video and automations, built end to end with AI.",
     url: "https://dor-noy.com",
     siteName: "Dor Noy",
     type: "website",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Dor Noy — Full Stack Developer + SDR",
-    description: "I build things that work and talk to people that matter.",
+    title: "Dor Noy | AI Builder: Web, AI Video, Automations",
+    description: "Websites, AI video and automations, built end to end with AI.",
   },
 };
 

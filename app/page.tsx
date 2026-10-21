@@ -23,9 +23,9 @@ export default function Home() {
         <Nav />
         <Hero />
         <VideoSection />
+        <Projects />
         <About />
         <Skills />
-        <Projects />
         <CV />
         <Connect />
       </main>

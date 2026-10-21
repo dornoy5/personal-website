@@ -2,15 +2,20 @@
 
 import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
-import { ChevronDown, Play } from "lucide-react";
+import { ChevronDown, Play, Sparkles } from "lucide-react";
 import { FiGithub, FiLinkedin, FiMail } from "react-icons/fi";
 
 const roles = [
-  "Full Stack Developer",
-  "Frontend Engineer",
-  "Backend Engineer",
-  "Sales Development Rep",
-  "Problem Solver",
+  "AI Builder",
+  "Web Developer",
+  "AI Video Producer",
+  "Automation Builder",
+];
+
+const lanes = [
+  { label: "Web",         className: "text-cyan-300 border-cyan-400/40 bg-cyan-400/[0.08]" },
+  { label: "AI Video",    className: "text-pink-300 border-pink-400/40 bg-pink-400/[0.08]" },
+  { label: "Automations", className: "text-amber-300 border-amber-400/40 bg-amber-400/[0.08]" },
 ];
 
 export default function Hero() {
@@ -90,22 +95,39 @@ export default function Hero() {
         <motion.p
           initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 1.1 }}
-          className="text-gray-300 text-base md:text-xl max-w-xl mx-auto mb-8 leading-relaxed"
+          className="text-gray-300 text-base md:text-xl max-w-2xl mx-auto mb-6 leading-relaxed"
         >
-          Glad you stopped by.{" "}
-          <span className="text-white font-semibold">I build things that work and talk to people that matter.</span>
+          <span className="text-white font-semibold">I build with AI, end to end.</span>{" "}
+          Live websites, AI video ads and property films, and the agent setup that runs my projects.
         </motion.p>
+
+        <motion.div
+          initial={{ opacity: 0, y: 12 }} animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, delay: 1.2 }}
+          className="flex flex-wrap items-center justify-center gap-2.5 mb-8"
+        >
+          {lanes.map((l, i) => (
+            <motion.span
+              key={l.label}
+              animate={{ y: [0, -4, 0] }}
+              transition={{ duration: 2.4, repeat: Infinity, delay: i * 0.3, ease: "easeInOut" }}
+              className={`px-4 py-1.5 rounded-full border text-xs font-bold tracking-[0.2em] uppercase ${l.className}`}
+            >
+              {l.label}
+            </motion.span>
+          ))}
+        </motion.div>
 
         <motion.div
           initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 1.3 }}
           className="flex flex-wrap items-center justify-center gap-4 mb-8"
         >
-          <a href="https://www.linkedin.com/in/dornoy" target="_blank" rel="noopener noreferrer" className="btn-primary">
-            <FiLinkedin size={17} /> Let&apos;s Connect
+          <a href="#projects" className="btn-primary">
+            <Sparkles size={17} /> See My Work
           </a>
-          <a href="https://github.com/dornoy5" target="_blank" rel="noopener noreferrer" className="btn-secondary">
-            <FiGithub size={17} /> View GitHub
+          <a href="https://www.linkedin.com/in/dornoy" target="_blank" rel="noopener noreferrer" className="btn-secondary">
+            <FiLinkedin size={17} /> Let&apos;s Connect
           </a>
         </motion.div>
 

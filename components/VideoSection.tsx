@@ -4,61 +4,29 @@ import { useRef, useEffect, useState } from "react";
 import { motion, useInView } from "framer-motion";
 import { Play } from "lucide-react";
 
-type Cue = { start: number; end: number; text: string };
-
-function parseTime(s: string): number {
-  const parts = s.trim().split(":");
-  if (parts.length === 3) {
-    return parseInt(parts[0]) * 3600 + parseInt(parts[1]) * 60 + parseFloat(parts[2]);
-  }
-  return parseInt(parts[0]) * 60 + parseFloat(parts[1]);
-}
-
-function parseVTT(text: string): Cue[] {
-  const cues: Cue[] = [];
-  const blocks = text.replace(/\r\n/g, "\n").split(/\n\n+/);
-  for (const block of blocks) {
-    const lines = block.trim().split("\n");
-    const timeLineIdx = lines.findIndex((l) => l.includes("-->"));
-    if (timeLineIdx === -1) continue;
-    const [start, end] = lines[timeLineIdx].split("-->").map((s) => parseTime(s));
-    const txt = lines.slice(timeLineIdx + 1).join("\n").trim();
-    if (txt) cues.push({ start, end, text: txt });
-  }
-  return cues;
-}
-
 export default function VideoSection() {
   const ref = useRef(null);
   const videoRef = useRef<HTMLVideoElement>(null);
   const isInView = useInView(ref, { once: true, margin: "-80px" });
   const [isPlaying, setIsPlaying] = useState(false);
-  const [cues, setCues] = useState<Cue[]>([]);
-  const [activeCue, setActiveCue] = useState("");
 
   const playIntro = () => {
     const v = videoRef.current;
     if (!v) return;
     if (v.ended) v.currentTime = 0;
     v.muted = false;
-    v.volume = 0.2;
+    v.volume = 0.7;
     v.play().catch(() => {});
   };
 
   useEffect(() => {
     const v = videoRef.current;
-    if (v) v.volume = 0.2;
+    if (v) v.volume = 0.7;
     const handler = () => playIntro();
     window.addEventListener("play-intro-video", handler);
     return () => window.removeEventListener("play-intro-video", handler);
   }, []);
 
-  useEffect(() => {
-    fetch(`/dor-noy-intro.vtt?v=${Date.now()}`, { cache: "no-store" })
-      .then((r) => (r.ok ? r.text() : Promise.reject()))
-      .then((text) => setCues(parseVTT(text)))
-      .catch(() => {});
-  }, []);
 
   return (
     <section id="video" className="py-12 relative overflow-hidden">
@@ -71,7 +39,7 @@ export default function VideoSection() {
             Hi, I&apos;m <span className="gradient-text">Dor</span>
           </h2>
           <p className="text-gray-500 text-base sm:text-xl max-w-2xl mx-auto px-2">
-            Watch this short intro to get to know who I am and what I bring to the table.
+            45 seconds on what I build. Made with AI, even me.
           </p>
         </motion.div>
 
@@ -83,18 +51,14 @@ export default function VideoSection() {
             <div className="relative h-full inline-block">
               <video
                 ref={videoRef}
-                src="/dor-noy-intro.mp4"
+                src="/work/dor-intro.mp4"
+                poster="/work/dor-intro-poster.jpg"
                 playsInline
                 controls
                 preload="auto"
                 onPlay={() => setIsPlaying(true)}
                 onPause={() => setIsPlaying(false)}
-                onEnded={() => { setIsPlaying(false); setActiveCue(""); }}
-                onTimeUpdate={(e) => {
-                  const t = e.currentTarget.currentTime;
-                  const active = cues.find((c) => t >= c.start && t <= c.end);
-                  setActiveCue(active?.text ?? "");
-                }}
+                onEnded={() => setIsPlaying(false)}
                 className="h-full w-auto rounded-xl sm:rounded-2xl object-cover bg-black shadow-2xl"
               />
 
@@ -110,21 +74,6 @@ export default function VideoSection() {
             </div>
           </div>
 
-          {activeCue && (
-            <motion.div
-              key={activeCue}
-              initial={{ opacity: 0, y: 6 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.25 }}
-              className="absolute bottom-3 sm:bottom-6 inset-x-0 z-20 pointer-events-none flex justify-center px-2 sm:px-8"
-            >
-              <div className="px-3 py-2 sm:px-5 sm:py-3 rounded-xl sm:rounded-2xl bg-[#030014]/85 backdrop-blur-md border border-cyan-400/30 shadow-[0_8px_30px_rgba(0,0,0,0.6)] max-w-2xl">
-                <p className="text-white text-sm sm:text-base md:text-lg font-medium leading-snug text-center whitespace-pre-line">
-                  {activeCue}
-                </p>
-              </div>
-            </motion.div>
-          )}
 
           {["top-3 left-3 sm:top-4 sm:left-4 border-t-2 border-l-2 rounded-tl-lg","top-3 right-3 sm:top-4 sm:right-4 border-t-2 border-r-2 rounded-tr-lg","bottom-3 left-3 sm:bottom-4 sm:left-4 border-b-2 border-l-2 rounded-bl-lg","bottom-3 right-3 sm:bottom-4 sm:right-4 border-b-2 border-r-2 rounded-br-lg"].map((cls, i) => (
             <div key={i} className={`absolute w-6 h-6 sm:w-8 sm:h-8 border-cyan-400/25 pointer-events-none ${cls}`} />

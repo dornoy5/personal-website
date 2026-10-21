@@ -2,12 +2,13 @@
 
 import { useRef } from "react";
 import { motion, useInView } from "framer-motion";
-import { Code2, TrendingUp, Zap } from "lucide-react";
+import { Clapperboard, Code2, TrendingUp, Workflow } from "lucide-react";
 
 const traits = [
-  { icon: <Code2 size={21} />,      title: "Full Stack Builder",      desc: "From idea to deployed product — frontend to backend, I own the full lifecycle." },
-  { icon: <TrendingUp size={21} />, title: "Sales-Minded Developer",  desc: "I understand users, pipelines, and what it takes to close — not just ship." },
-  { icon: <Zap size={21} />,        title: "Ownership & Speed",       desc: "I take ownership, move with urgency, and focus relentlessly on what works." },
+  { icon: <Code2 size={21} />,        title: "Websites, Live",       desc: "From idea to a live site the owner runs from her phone. Built with Claude Code, checked by me." },
+  { icon: <Clapperboard size={21} />, title: "AI Video",             desc: "Property films and video ads made from photos. Veo for the camera moves, an ffmpeg pipeline for the cut." },
+  { icon: <Workflow size={21} />,     title: "Automations & Agents", desc: "A multi-agent Claude Code setup that runs my projects, with written rules for every repeated job." },
+  { icon: <TrendingUp size={21} />,   title: "Sales Background",     desc: "I come from sales, so I start with the person who will use it and what makes them say yes." },
 ];
 
 export default function About() {
@@ -30,12 +31,12 @@ export default function About() {
           <motion.div initial={{ opacity: 0, x: -40 }} animate={isInView ? { opacity: 1, x: 0 } : {}}
             transition={{ duration: 0.7, delay: 0.15 }}>
             <blockquote className="text-2xl md:text-3xl font-bold leading-snug mb-8 text-gray-100">
-              &ldquo;I don&apos;t just build products &mdash;{" "}
-              <span className="gradient-text">I understand the people using them.</span>&rdquo;
+              &ldquo;AI does the heavy lifting.{" "}
+              <span className="gradient-text">I decide what gets built and check what comes back.</span>&rdquo;
             </blockquote>
             <p className="text-gray-400 text-lg leading-relaxed mb-5">
-              I&apos;m Dor — a full-stack developer with a strong background in sales development.
-              I don&apos;t just build products, I understand the people using them and how to communicate real value.
+              I&apos;m Dor. I build with AI from start to finish: the website, the video, and the system that keeps the work moving.
+              Before this I was in sales, so I know how to explain what a thing is worth to the person paying for it.
             </p>
             <p className="text-gray-500 text-base leading-relaxed">
               If you&apos;re looking for someone who can both{" "}

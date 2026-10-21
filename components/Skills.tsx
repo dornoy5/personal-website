@@ -6,13 +6,13 @@ import {
   SiReact, SiTypescript, SiJavascript, SiHtml5, SiCss3,
   SiNextdotjs, SiTailwindcss, SiFramer, SiAngular, SiSass, SiRedux,
   SiNodedotjs, SiPython, SiDjango, SiExpress, SiPostgresql, SiMongodb,
-  SiFirebase, SiSupabase,
+  SiFirebase, SiSupabase, SiCloudflare, SiFfmpeg,
   SiDocker, SiGit, SiGithub, SiVisualstudiocode, SiVercel, SiNpm, SiPnpm,
   SiPostman, SiFigma, SiLinux,
   SiOpenai,
 } from "react-icons/si";
 import type { IconType } from "react-icons";
-import { Sparkles, Bot, MousePointer2, Triangle, Search, Mic, Globe } from "lucide-react";
+import { Sparkles, Bot, MousePointer2, Triangle, Search, Mic, Globe, Clapperboard, Workflow } from "lucide-react";
 import type { LucideIcon } from "lucide-react";
 
 type AnyIcon = IconType | LucideIcon;
@@ -60,6 +60,7 @@ const categories: Category[] = [
       { name: "GitHub",  icon: SiGithub,           color: "#E5E7EB" },
       { name: "VS Code", icon: SiVisualstudiocode, color: "#007ACC" },
       { name: "Vercel",  icon: SiVercel,           color: "#FFFFFF" },
+      { name: "Cloudflare", icon: SiCloudflare,    color: "#F38020" },
       { name: "Docker",  icon: SiDocker,           color: "#2496ED" },
       { name: "npm",     icon: SiNpm,              color: "#CB3837" },
       { name: "pnpm",    icon: SiPnpm,             color: "#F69220" },
@@ -73,6 +74,9 @@ const categories: Category[] = [
     gradient: "from-amber-500/10 to-orange-600/5", accent: "border-amber-500/20",
     skills: [
       { name: "Claude / Claude Code", icon: Sparkles,      color: "#D97757" },
+      { name: "Multi-agent setups",   icon: Workflow,      color: "#FBBF24" },
+      { name: "Veo 3.1",              icon: Clapperboard,  color: "#F472B6" },
+      { name: "ffmpeg",               icon: SiFfmpeg,      color: "#5CB85C" },
       { name: "ChatGPT",              icon: SiOpenai,      color: "#10A37F" },
       { name: "GitHub Copilot",       icon: Bot,           color: "#E5E7EB" },
       { name: "Cursor",               icon: MousePointer2, color: "#67E8F9" },

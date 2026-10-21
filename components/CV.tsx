@@ -5,8 +5,8 @@ import { motion, useInView } from "framer-motion";
 import { Download, FileText, Briefcase, GraduationCap } from "lucide-react";
 
 const highlights = [
-  { icon: <Briefcase size={18} />,     label: "Experience", value: "Full Stack & Sales Development" },
-  { icon: <GraduationCap size={18} />, label: "Focus",      value: "Building & Communicating Value" },
+  { icon: <Briefcase size={18} />,     label: "Experience", value: "AI Builder, Full Stack & Sales" },
+  { icon: <GraduationCap size={18} />, label: "Focus",      value: "Web, AI Video & Automations" },
   { icon: <FileText size={18} />,      label: "Status",     value: "Open to New Opportunities" },
 ];
 

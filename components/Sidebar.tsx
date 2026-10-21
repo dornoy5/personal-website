@@ -8,9 +8,9 @@ import { FiGithub, FiLinkedin } from "react-icons/fi";
 const navItems = [
   { id: "home",     label: "Home",    icon: Home       },
   { id: "video",    label: "Intro",   icon: Play       },
+  { id: "projects", label: "Work",    icon: FolderGit2 },
   { id: "about",    label: "About",   icon: User       },
   { id: "skills",   label: "Skills",  icon: Code2      },
-  { id: "projects", label: "Work",    icon: FolderGit2 },
   { id: "cv",       label: "CV",      icon: FileText   },
   { id: "contact",  label: "Contact", icon: Mail       },
 ];

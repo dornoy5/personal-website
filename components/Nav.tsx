@@ -4,9 +4,9 @@ import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 
 const links = [
+  { label: "Work",     href: "#projects" },
   { label: "About",    href: "#about"    },
   { label: "Skills",   href: "#skills"   },
-  { label: "Work",     href: "#projects" },
   { label: "CV",       href: "#cv"       },
   { label: "Contact",  href: "#contact"  },
 ];
