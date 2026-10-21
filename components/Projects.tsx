@@ -1,8 +1,10 @@
 "use client";
 
-import { useEffect, useRef } from "react";
-import { motion, useInView } from "framer-motion";
-import { ArrowUpRight, Globe, Clapperboard, Sparkles, Workflow } from "lucide-react";
+import { useEffect, useRef, useState } from "react";
+import { motion, useInView, AnimatePresence } from "framer-motion";
+import { ArrowUpRight, Globe, Clapperboard, Images, Sparkles, Workflow } from "lucide-react";
+import PhotoViewer from "@/components/PhotoViewer";
+import { photoUrls } from "@/components/galleryData";
 import { FiGithub } from "react-icons/fi";
 
 type Accent = { text: string; border: string; glow: string; chip: string };
@@ -143,6 +145,7 @@ const card = "relative rounded-3xl overflow-hidden glass border border-white/10 
 export default function Projects() {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, margin: "-80px" });
+  const [photos, setPhotos] = useState<{ title: string; slug: string; count: number } | null>(null);
 
   const reveal = (delay: number) => ({
     initial: { opacity: 0, y: 30 },
@@ -220,6 +223,9 @@ export default function Projects() {
               </p>
               <Chips tech={["Veo 3.1", "ffmpeg", "Python", "Claude Code"]} accent={accents.pink} />
               <p className="text-[11px] text-gray-600">Stock photos, licensed for commercial use.</p>
+              <button onClick={() => setPhotos({ title: "Skyline Loft", slug: "skyline-loft", count: 9 })} className="btn-secondary mt-4">
+                <Images size={17} /> See the 9 photos
+              </button>
             </div>
           </motion.article>
 
@@ -266,6 +272,9 @@ export default function Projects() {
                 I drew the floor plan first, so every move goes where a person could really walk.
               </p>
               <Chips tech={["Veo 3.1", "ffmpeg", "Floor plan first"]} accent={accents.pink} />
+              <button onClick={() => setPhotos({ title: "Rishon LeZion Flat", slug: "ori-flat", count: 13 })} className="btn-secondary mt-2">
+                <Images size={17} /> See the 13 photos
+              </button>
             </div>
           </motion.article>
 
@@ -345,6 +354,9 @@ export default function Projects() {
           </div>
         </div>
       </div>
+      <AnimatePresence>
+        {photos && <PhotoViewer title={photos.title} photos={photoUrls(photos.slug, photos.count)} onClose={() => setPhotos(null)} />}
+      </AnimatePresence>
     </section>
   );
 }

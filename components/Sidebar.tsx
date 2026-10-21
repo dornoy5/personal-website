@@ -2,13 +2,14 @@
 
 import { useEffect, useState, useCallback } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { Home, Play, User, Code2, FolderGit2, FileText, Mail, ChevronLeft } from "lucide-react";
+import { Home, Play, User, Code2, FolderGit2, LayoutGrid, FileText, Mail, ChevronLeft } from "lucide-react";
 import { FiGithub, FiLinkedin } from "react-icons/fi";
 
 const navItems = [
   { id: "home",     label: "Home",    icon: Home       },
   { id: "video",    label: "Intro",   icon: Play       },
   { id: "projects", label: "Work",    icon: FolderGit2 },
+  { id: "more-work", label: "More",   icon: LayoutGrid },
   { id: "about",    label: "About",   icon: User       },
   { id: "skills",   label: "Skills",  icon: Code2      },
   { id: "cv",       label: "CV",      icon: FileText   },

@@ -6,6 +6,7 @@ import VideoSection from "@/components/VideoSection";
 import About from "@/components/About";
 import Skills from "@/components/Skills";
 import Projects from "@/components/Projects";
+import MoreWork from "@/components/MoreWork";
 import CV from "@/components/CV";
 import Connect from "@/components/Connect";
 import FullPageBackground from "@/components/FullPageBackground";
@@ -24,6 +25,7 @@ export default function Home() {
         <Hero />
         <VideoSection />
         <Projects />
+        <MoreWork />
         <About />
         <Skills />
         <CV />
