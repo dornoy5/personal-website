@@ -39,7 +39,7 @@ export default function VideoSection() {
             Hi, I&apos;m <span className="gradient-text">Dor</span>
           </h2>
           <p className="text-gray-500 text-base sm:text-xl max-w-2xl mx-auto px-2">
-            30 seconds on what I build. Made with AI, even me.
+            A short intro on what I build. Made with AI, even me.
           </p>
         </motion.div>
 
